@@ -1,9 +1,26 @@
 services:
   - type: web
-    name: youtube-downloader-api
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
+    name: nabees-youtube-api
+    env: node
+    buildCommand: npm install && npm run setup
+    startCommand: npm start
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: RATE_LIMIT_MAX
+        value: 100
+      - key: DOWNLOAD_LIMIT_MAX
+        value: 10
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: API_KEY_REQUIRED
+        value: "false"
+    healthCheckPath: /api/health
+    autoDeploy: true
+    disk:
+      name: downloads
+      mountPath: /opt/render/project/src/downloads
+      sizeGB: 1
+    plan: free
