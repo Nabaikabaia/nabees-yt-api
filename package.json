@@ -1,0 +1,53 @@
+{
+  "name": "nabees-youtube-api",
+  "version": "2.0.0",
+  "description": "Nãbēēs YouTube API - Download YouTube videos and music as MP3/MP4 with metadata",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "render-start": "node index.js",
+    "test": "jest --testTimeout=30000",
+    "clean": "rm -rf downloads XeonMedia temp",
+    "setup": "npm install && mkdir -p downloads XeonMedia/audio temp"
+  },
+  "keywords": [
+    "youtube",
+    "api",
+    "downloader",
+    "mp3",
+    "mp4",
+    "music",
+    "nabeels",
+    "rest-api"
+  ],
+  "author": "Nãbēēs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nabaikabaia/nabees-yt-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nabaikabaia/nabees-yt-api/issues"
+  },
+  "homepage": "https://github.com/nabaikabaia/nabees-yt-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.9.0",
+    "morgan": "^1.10.0",
+    "youtubedl-core": "^4.11.4",
+    "youtube-yts": "^1.0.5",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-id3": "^0.2.6",
+    "node-youtube-music": "^1.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
